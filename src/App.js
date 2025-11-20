@@ -30,7 +30,10 @@ function App() {
   return (
     <div className="container">
       <h2>XLogin</h2>
-
+      {/* Error below form only */}
+          {message === "Invalid username or password" && (
+            <div className="error-message">{message}</div>
+          )}
       {!loggedIn && (
         <>
           <form onSubmit={handleSubmit}>
@@ -54,11 +57,6 @@ function App() {
 
             <button type="submit">Submit</button>
           </form>
-
-          {/* Error below form only */}
-          {message === "Invalid username or password" && (
-            <div className="error-message">{message}</div>
-          )}
         </>
       )}
 
